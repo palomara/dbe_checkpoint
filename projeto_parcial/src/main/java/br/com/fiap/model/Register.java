@@ -1,7 +1,5 @@
 package br.com.fiap.model;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +14,7 @@ public class Register {
 	private String email;
 	private String password;
 	private String address;
-	private int age;
+	private String birthDate;
 
 	public Long getId() {
 		return id;
@@ -42,12 +40,12 @@ public class Register {
 		this.address = address;
 	}
 
-	public int getAge() {
-		return age;
+	public String getBirthDate() {
+		return birthDate;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getEmail() {
@@ -68,7 +66,7 @@ public class Register {
 
 	@Override
 	public String toString() {
-		return "Register [name=" + name + ", email=" + email +", password=" + password + ", address=" + address + ", age=" + age + "]";
+		return "Register [name=" + name + ", email=" + email +", password=" + password + ", address=" + address + ", birth date=" + birthDate + "]";
 	}
 	
 	

@@ -7,7 +7,7 @@ import javax.swing.*;
 public class IndexBean {
 	
 	public void execute() {
-		System.out.println("Carregando");
+		System.out.println("carregando");
 	}
 	
 }

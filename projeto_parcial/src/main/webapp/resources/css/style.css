@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 body{
-	background-color: #ddd;
+	background-color: #3d0400;
 }
 
 .form-card{
-	width: 25rem;
+	width: 35rem;
 	margin: 1rem auto;
 }
 
@@ -39,6 +39,7 @@ body{
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
+    color: red;
 }
 
 .setup-address {

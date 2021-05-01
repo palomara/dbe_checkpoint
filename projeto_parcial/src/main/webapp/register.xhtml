@@ -16,10 +16,10 @@
 		<h:form>
 		<p:card class="form-card">
 		    <f:facet name="title">
-		       New Register
+		       Novo Cadastro
 		    </f:facet>
 		   <div class="p-field p-grid">
-			    <h:outputLabel for="name" class="p-col-fixed" style="width:100px" value="Name" />
+			    <h:outputLabel for="name" class="p-col-fixed" style="width:100px" value="Nome" />
 			    <div class="p-col" style="display: grid">
 			        <p:inputText id="name" value="#{registerBean.register.name}" required="true" requiredMessage="The name field is required">
 			        	<f:ajax event="blur" render="messages" />
@@ -27,7 +27,7 @@
 			    </div>
 			</div>
 			<div class="p-field p-grid">
-				<h:outputLabel for="email" class="p-col-fixed" style="width:100px" value="Email" />
+				<h:outputLabel for="email" class="p-col-fixed" style="width:100px" value="E-mail" />
 				<div class="p-col" style="display: grid">
 					<p:inputText id="email" value="#{registerBean.register.email}" required="true" requiredMessage="The email field is required">
 						<f:ajax event="blur" render="messages" />
@@ -35,28 +35,27 @@
 				</div>
 			</div>
 			<div class="p-field p-grid">
-				<h:outputLabel for="password" class="p-col-fixed" value="Password" />
+				<h:outputLabel for="password" class="p-col-fixed" value="Senha" />
 				<div class="p-col">
-					<p:password id="password" toggleMask="true" redisplay="true" value="#{registerBean.register.password}" required="true" requiredMessage="The password field is required">
+					<p:password id="password" toggleMask="true" feedback="true" inline="true" redisplay="true" value="#{registerBean.register.password}" required="true" requiredMessage="The password field is required">
 						<f:ajax event="blur" render="messages" />
 					</p:password>
 				</div>
 			</div>
 			<div class="p-field p-grid">
-			    <label for="address" class="p-col-fixed" style="width:100px">Address</label>
+			    <label for="address" class="p-col-fixed" style="width:100px">Endereço</label>
 			    <div class="p-col" style="display: grid">
-			        <p:inputText id="address" value="#{registerBean.register.address}" required="true" requiredMessage="The address field is required">
+			        <p:inputText id="address" value="#{registerBean.register.address}" required="true" requiredMessage="Preencha o endereço">
 			        	<f:ajax event="blur" render="messages" />
 			        </p:inputText>
 			    </div>
 			</div>
 			<div class="p-field p-grid">
-			    <label for="age" class="p-col-fixed" style="width: 100px">Age</label>
+			    <label for="date" class="p-col-fixed" style="width: 100px">Data de Nascimento</label>
 			    <div class="p-col">
-			        <p:inputText id="age" value="#{registerBean.register.age}" converterMessage="The age field must be a number">
-			        	<f:validateDoubleRange minimum="0" />
+			        <p:inputMask id="date" value="#{registerBean.register.birthDate}" mask="99/99/9999" converterMessage="Insira a data em formato numerico">
 			        	<f:ajax event="blur" render="messages" />
-			        </p:inputText>
+					</p:inputMask>
 			    </div>
 			</div>
 			
@@ -69,14 +68,14 @@
 		</p:card>
 		
 		<p:dataTable value="#{registerBean.registers}" var="register">
-			<p:column headerText="Name">
+			<p:column headerText="Nome">
 				<h:outputText value="#{register.name}" />
 			</p:column>
-			<p:column headerText="Email">
+			<p:column headerText="E-mail">
 				<h:outputText value="#{register.email}" />
 			</p:column>
-			<p:column headerText="Age">
-				<h:outputText value="#{register.age}" />
+			<p:column headerText="Data de Nascimento">
+				<h:outputText value="#{register.birthDate}" />
 			</p:column>
 		</p:dataTable>
 		

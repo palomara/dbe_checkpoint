@@ -18,8 +18,8 @@ public class RegisterBean {
 	
 	public void save() {
 		new RegisterDAO().save(this.register);
-		System.out.println("Salvando" + this.register);
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Cadastro completado!"));
+		System.out.println("salvando" + this.register);
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Cadastrado!"));
 	}
 	
 	public List<Register> getRegisters(){
